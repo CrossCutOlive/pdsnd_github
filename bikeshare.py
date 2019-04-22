@@ -137,30 +137,21 @@ def Stationn_stats(df):
     print('\nCalculating The MOST Popular Stations and Trip...\n')
     start_time = time.time()
 
-# display MOST Popular Start Station
+# display MOST Popular Start Station & display LEAST Popular Start Station
     Start_Stationn = df['Start Station'].value_counts().idxmax()
     print('Wow! The MOST Popular used Start Station is:\n', Start_Stationn)
-
-# display MOST Popular End Station
-    End_Stationn = df['End Station'].value_counts().idxmax()
-    print('Wow! The MOST Popular used End Station is:\n', End_Stationn)
-
-#display MOST Popular trip by Start and End Stations
-    Trip_Stationns = df.groupby(['Start Station', 'End Station']).count()
-    print('Wow! The MOST Popular trip by Start Station and End Station is:\n', Start_Stationn, " & ", End_Stationn)
-
-    """Displays stats on the LEAST Popular Stations and trip."""
-    print('\nCalculating The LEAST Popular Stations and Trip...\n')
-
-# display LEAST Popular Start Station
     Start_Stationn = df['Start Station'].value_counts().idxmin()
     print('Wow! The LEAST Popular used Start Station is:\n', Start_Stationn)
 
-# display LEAST Popular End Station
+# display MOST Popular End Station & #display LEAST Popular End Station
+    End_Stationn = df['End Station'].value_counts().idxmax()
+    print('Wow! The MOST Popular used End Station is:\n', End_Stationn)
     End_Stationn = df['End Station'].value_counts().idxmin()
     print('Wow! The LEAST Popular used End Station is:\n', End_Stationn)
 
-#display LEAST Popular trip by Start and End Stations
+#display MOST Popular trip by Start and End Stations & display LEAST Popular trip by Start and End Stations
+    Trip_Stationns = df.groupby(['Start Station', 'End Station']).count()
+    print('Wow! The MOST Popular trip by Start Station and End Station is:\n', Start_Stationn, " & ", End_Stationn)
     Trip_Stationns = df.groupby(['Start Station', 'End Station']).count().idxmin()
     print('Wow! The LEAST Popular trip by Start Station and End Station is:\n', Start_Stationn, " & ", End_Stationn)
 
