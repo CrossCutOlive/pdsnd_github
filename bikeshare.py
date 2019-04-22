@@ -58,7 +58,6 @@ def load_data(month, day, city):
 
     """
     Loads data for the specified city and filters by month and day if applicable.
-
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -111,14 +110,14 @@ def time_stats(df):
     Popular_day = df['day_of_week'].mode()[0]
     print('Wow! The MOST Popular day is:\n', Popular_day)
     LEAST_Popular_day_of_week = df['day_of_week'].value_counts().idxmin()
-	print("Wow! The LEAST Popular day of week is:\n", LEAST_Popular_day_of_week)
+    print("Wow! The LEAST Popular day of week is:\n", LEAST_Popular_day_of_week)
 
 #display the MOST Popular hour & display the LEAST Popular Start hour
     df['hour'] = df['Start Time'].dt.hour
     Popular_hour = df['hour'].mode()[0]
     print('Wow! The MOST Popular hour is:\n', Popular_hour)
-	LEAST_Popular_start_hour = df['hour'].value_counts().idxmin()
-	print("Wow! The LEAST Popular Start hour is:\n", LEAST_Popular_start_hour)
+    LEAST_Popular_start_hour = df['hour'].value_counts().idxmin()
+    print("Wow! The LEAST Popular Start hour is:\n", LEAST_Popular_start_hour)
 
     print("\nThat was quick! This query only took %s seconds! We can thank numpy for that ^_-" % (round(time.time() - start_time,2)),"\n")
     print('*_*'*50)
