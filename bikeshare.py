@@ -98,43 +98,34 @@ def load_data(month, day, city):
 def time_stats(df):
     """Displays stats on the MOST frequent times of travel."""
 
-    print('\nCalculating The MOST Frequent Times of Travel...\n')
+    print('\nCalculating The MOST & LEAST Frequent Times of Travel...\n')
     start_time = time.time()
 
-#display the MOST Popular month
+#display the MOST Popular month & display the LEAST Popular month
     Popular_month = df['month'].mode()[0]
     print('Wow! The MOST Popular month is:\n', Popular_month)
-
-#display the MOST Popular week
-    Popular_day = df['day_of_week'].mode()[0]
-    print('Wow! The MOST Popular day is:\n', Popular_day)
-
-#display the MOST Popular hour
-    df['hour'] = df['Start Time'].dt.hour
-    Popular_hour = df['hour'].mode()[0]
-    print('Wow! The MOST Popular hour is:\n', Popular_hour)
-
-    """Displays stats on the LEAST frequent times of travel.""" ##could not locate the opposite of mode() :(
-
-    print('\nCalculating The LEAST Frequent Times of Travel...\n')
-
-# display the LEAST Popular month
     LEAST_Popular_month = df['month'].value_counts().idxmin()
     print("Wow! The LEAST Popular month is :\n", LEAST_Popular_month)
 
-# display the LEAST Popular day of week
+#display the MOST Popular week & display the LEAST Popular day of week
+    Popular_day = df['day_of_week'].mode()[0]
+    print('Wow! The MOST Popular day is:\n', Popular_day)
     LEAST_Popular_day_of_week = df['day_of_week'].value_counts().idxmin()
-    print("Wow! The LEAST Popular day of week is:\n", LEAST_Popular_day_of_week)
+	print("Wow! The LEAST Popular day of week is:\n", LEAST_Popular_day_of_week)
 
-# display the LEAST Popular Start hour
-    LEAST_Popular_start_hour = df['hour'].value_counts().idxmin()
-    print("Wow! The LEAST Popular Start hour is:\n", LEAST_Popular_start_hour)
+#display the MOST Popular hour & display the LEAST Popular Start hour
+    df['hour'] = df['Start Time'].dt.hour
+    Popular_hour = df['hour'].mode()[0]
+    print('Wow! The MOST Popular hour is:\n', Popular_hour)
+	LEAST_Popular_start_hour = df['hour'].value_counts().idxmin()
+	print("Wow! The LEAST Popular Start hour is:\n", LEAST_Popular_start_hour)
+
     print("\nThat was quick! This query only took %s seconds! We can thank numpy for that ^_-" % (round(time.time() - start_time,2)),"\n")
     print('*_*'*50)
 
 def Stationn_stats(df):
     """Displays stats on the MOST Popular Stations and trip."""
-    print('\nCalculating The MOST Popular Stations and Trip...\n')
+    print('\nCalculating The MOST & LEAST Popular Stations and Trip...\n')
     start_time = time.time()
 
 # display MOST Popular Start Station & display LEAST Popular Start Station
@@ -158,7 +149,6 @@ def Stationn_stats(df):
     print("\nThat was quick! This query only took %s seconds! We can thank numpy for that ^_-" % (round(time.time() - start_time,2)),"\n")
     print('*_*'*50)
 
-
 def trip_duration_stats(df):
     """Displays stats on the total and average trip duration."""
 
@@ -180,24 +170,19 @@ def trip_duration_stats(df):
 #display min travel time
     Min_Travel_Time = df['Trip Duration'].min()
     print('Wow! The Min trip travel time is:\n', round(Min_Travel_Time/60,2), " Minutes")
-
     print("\nThat was quick! This query only took %s seconds! We can thank numpy for that ^_-" % (round(time.time() - start_time,2)),"\n")
     print('*_*'*50)
 
-
 def user_stats(df):
     """Displays statistics on bikeshare users."""
-
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
 #Display volume of user types
-
     user_types = df['User Type'].value_counts()
     print('\nPLEASE NOTE: Washington DataSet DOES NOT contain data on Gender or Birthyear\n \nUser Types:\n',user_types)
 
 #Display volume split of gender types
-
     try:
       gender_types = df['Gender'].value_counts()
       print('\nGender Types:\n',gender_types)
@@ -205,25 +190,21 @@ def user_stats(df):
       print("\nGender Types:\nNo data available for this month.")
 
  #Display earliest, MOST recent, and MOST Popular year of birth
-
     try:
       Earliest_Year = df['Birth Year'].min()
       print('Wow! The Earliest Birth Year is:\n',int(Earliest_Year))
     except KeyError:
       print("\nEarliest Birth Year:\nNo data available for this month.")
-
     try:
       MOST_Recent_Year = df['Birth Year'].max()
       print('Wow! The MOST Recent Birth Year is:\n',int(MOST_Recent_Year))
     except KeyError:
       print("\nMOST Recent Birth Year:\nNo data available for this month.")
-
     try:
       MOST_Popular_Year = df['Birth Year'].value_counts().idxmax()
       print('Wow! The MOST Popular Birth Year is:\n',int(MOST_Popular_Year))
     except KeyError:
       print("\nMOST Popular Birth Year:\nNo data available for this month.")
-
     try:
       LEAST_Popular_Year = df['Birth Year'].value_counts().idxmin()
       print('Wow! The LEAST Popular Birth Year is:\n',int(LEAST_Popular_Year))
