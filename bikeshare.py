@@ -233,6 +233,12 @@ def user_stats(df):
     except KeyError:
       print("\nMOST Popular Birth Year:\nNo data available for this month.")
 
+    try:
+      LEAST_Popular_Year = df['Birth Year'].value_counts().idxmin()
+      print('Wow! The LEAST Popular Birth Year is:\n',int(LEAST_Popular_Year))
+    except KeyError:
+      print("\nLEAST Popular Birth Year:\nNo data available for this month.")
+
     print("\nThat was quick! This query only took %s seconds! We can thank numpy for that ^_-" % (round(time.time() - start_time,2)),"\n")
     print('*_*'*50)
 
