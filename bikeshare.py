@@ -238,14 +238,14 @@ def user_stats(df):
 
     # Allow user to review 5 rows of raw data at a time
 def raw_data(df):
-    user_input = input('Would you like to review some of the raw data?\n Please enter Y is so or N if not.\n')
+    user_input = input('Would you like to review 25 rows of the raw data?\n Please enter Y is so or N if not.\n')
     line_number = 0
 
     while 1 == 1 :
         if user_input.lower() != 'n':
-            print(df.iloc[line_number : line_number + 5])
-            line_number += 5
-            user_input = input('Would you like to review some of the raw data?\n Please enter Y is so or N if not.\n')
+            print(df.iloc[line_number : line_number + 25])
+            line_number += 25
+            user_input = input('Would you like to review a additional 25 rows of the raw data?\n Please enter Y is so or N if not.\n')
         else:
             break
 
