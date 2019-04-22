@@ -24,27 +24,23 @@ README.md
 .gitignore
 
 ### Credits
-UDACITY Programming for Data Science -->
-https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104
-README.md template forked from -->
-https://github.com/udacity/pdsnd_github
-Git & Git Bash  
---> https://git-scm.com/downloads
-GitHub          
---> https://github.com/
-Atom            
---> https://atom.io/
-Python          
---> https://www.python.org/downloads/
-Stack Overflow  
---> https://stackoverflow.com/
+[UDACITY Programming for Data Science][1]
+[1]: https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104 "UDACITY"
+[README.md template fork location][2]
+[2]: https://github.com/udacity/pdsnd_github "README Fork"
+[Git & Git Bash][3]  
+[3]: https://git-scm.com/downloads "Git & Git Bash"
+[GitHub][4]          
+[4]: https://github.com/ "GitHub"
+[Atom][5]            
+[5]: https://atom.io/ "Atom"
+[Python][6]          
+[6]: https://www.python.org/downloads/ "Python"
+[Stack Overflow][7]  
+[7]: https://stackoverflow.com/
 
 Python Packages: time & pandas & numpy & decimal
 
-Helpful Links:
-
-formatting decimal places:
-https://stackoverflow.com/questions/4518641/how-do-i-round-a-floating-point-number-up-to-a-certain-decimal-place
-
-Statistics in Python:
-https://docs.python.org/3.4/library/statistics.html
+##Helpful Links:
+formatting decimal places [here](https://stackoverflow.com/questions/4518641/how-do-i-round-a-floating-point-number-up-to-a-certain-decimal-place "here")
+Statistics in Python [here](https://docs.python.org/3.4/library/statistics.html "here")
