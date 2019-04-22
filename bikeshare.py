@@ -27,7 +27,15 @@ def get_filters():
     print('\nWelcome! Let\'s explore some data from US bikeshare and see what we can learn! \n \n ^_^')
 
     while True:
-      month = input("\n To begin with our investigation. \nWhich month would you like to filter by? \nJanuary, February, March, April, May, June or type 'all' if you do not have any preference?\n").lower()
+      city = input("\nWhich city would you like to filter by? =) New York City, Chicago or Washington to see statistics on your chosen city?\n").lower()
+      if city not in ('washington','chicago','new york city'):
+        print("Sorry, I was unable to locate that city :( please type the entire city like: \n \nWashington \n \nand try again. Thankyou! :)")
+        continue
+      else:
+        break
+
+    while True:
+      month = input("\n To begin with our investigation =) \nWhich month would you like to filter by? \nJanuary, February, March, April, May, June or type 'all' if you do not have any preference?\n").lower()
       if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
         print("Sorry, I was unable to locate that month :( please type the entire month like: \n \nJune \n \nand try again. Thankyou! :)")
         continue
@@ -35,17 +43,9 @@ def get_filters():
         break
 
     while True:
-      day = input("\nAre you looking for any day in particular? If so, please enter the day as follows: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or type 'all' if you wish to view all days of the week\n").lower()
+      day = input("\nAre you looking for any day in particular? =) If so, please enter the day as follows: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or type 'all' if you wish to view all days of the week\n").lower()
       if day not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
         print("Sorry, I was unable to locate that day :( please type the entire day like: \n \nSunday \n \nand try again. Thankyou! :)")
-        continue
-      else:
-        break
-
-    while True:
-      city = input("\nWhich city would you like to filter by? New York City, Chicago or Washington to see statistics on your chosen city?\n").lower()
-      if city not in ('washington','chicago','new york city'):
-        print("Sorry, I was unable to locate that city :( please type the entire city like: \n \nWashington \n \nand try again. Thankyou! :)")
         continue
       else:
         break
