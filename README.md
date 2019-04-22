@@ -28,16 +28,18 @@ UDACITY Programming for Data Science -->
 https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104
 README.md template forked from -->
 https://github.com/udacity/pdsnd_github
-Git & Git Bash  --> https://git-scm.com/downloads
-GitHub          --> https://github.com/
-Atom            --> https://atom.io/
-Python          --> https://www.python.org/downloads/
-Stack Overflow  --> https://stackoverflow.com/
-Python Packages:
-time
-pandas
-numpy
-decimal
+Git & Git Bash  
+--> https://git-scm.com/downloads
+GitHub          
+--> https://github.com/
+Atom            
+--> https://atom.io/
+Python          
+--> https://www.python.org/downloads/
+Stack Overflow  
+--> https://stackoverflow.com/
+
+Python Packages: time & pandas & numpy & decimal
 
 Helpful Links:
 
