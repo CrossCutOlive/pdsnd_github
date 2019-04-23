@@ -39,8 +39,17 @@ README.md
 
 [Stack Overflow](https://stackoverflow.com/)  
 
-Python Packages: time & pandas & numpy & decimal
+#### Python Packages:
+
+[pandas](https://pandas.pydata.org/)
+
+[numpy](https://www.numpy.org/)
+
+[time](https://docs.python.org/3/library/time.html)
+
+[decimal](https://docs.python.org/3/library/decimal.html)
 
 #### Helpful Links:
 formatting decimal places [here](https://stackoverflow.com/questions/4518641/how-do-i-round-a-floating-point-number-up-to-a-certain-decimal-place "here")
+
 Statistics in Python [here](https://docs.python.org/3.4/library/statistics.html "here")
