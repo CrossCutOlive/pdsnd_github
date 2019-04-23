@@ -1,12 +1,9 @@
 import time
 import pandas as pd
 import numpy as np
-import decimal # https://stackoverflow.com/questions/4518641/how-do-i-round-a-floating-point-number-up-to-a-certain-decimal-place
+import decimal
 
-## Mode() Source --> https://docs.python.org/3.4/library/statistics.html
-
-#Combines all three city .csvs to a single DF
-## Quick workaround to allow both case sensitive option to work :( Not ideal fix :(
+#Combines all three city .csvs to a single Data Frame (df)
 CITY_DATA = { 	'Washington': 'washington.csv',
 				'Chicago': 'chicago.csv',
 				'New York City': 'new_york_city.csv',
@@ -65,9 +62,6 @@ def load_data(month, day, city):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-
-	##must call main city df first
-    # declare all three . csvsinto a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
 	# convert the Start Time column to a datetime
@@ -80,16 +74,12 @@ def load_data(month, day, city):
 
     # month filter
     if month != 'all':
-   	 	# use the index of the months list to get the corresponding int ## data sets only go between Jan and June :(
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-
-    	# filter by month to create the new dataframe
         df = df[df['month'] == month]
 
     # day filter
     if day != 'all':
-        # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
 
     return df
